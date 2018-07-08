@@ -7,6 +7,7 @@ function [theta, J_history] = gradientDescent(X, y, theta, alpha, num_iters)
 m = length(y); % number of training examples
 J_history = zeros(num_iters, 1);
 
+% this loop from i = 1:m represents the summation in the given gradientDescent equation
 for iter = 1:num_iters
 
     % ====================== YOUR CODE HERE ======================
@@ -17,10 +18,15 @@ for iter = 1:num_iters
     %       of the cost function (computeCost) and gradient here.
     %
 
-
-
-
-
+    % get the hypothesis "h"
+    h = X*theta;
+    
+    % calc the stuff insde the summation "s" between the hypotheses and the y values 
+    s = X'*(h - y);
+    
+    % simultaneously update theta_j for all j 
+    % ... meaning each cell in current row "num_iters"?
+    theta = theta - s*(alpha/m);
 
 
     % ============================================================

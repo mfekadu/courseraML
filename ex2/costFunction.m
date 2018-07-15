@@ -22,7 +22,12 @@ grad = zeros(size(theta));
 
 
 
-
+% better vectorized instead of loop
+%log_h = log(h);
+%log_1_minus_h = log(1 - h);
+h = sigmoid(X*theta);
+s = sum(y'*log(h) + (1-y)'*log(1 - h));
+J = -(1/m) * s;
 
 
 

@@ -54,3 +54,4 @@ Mkfile.old
 dkms.conf
 ex1/octave-workspace
 ex1/token.mat
+*.mat
